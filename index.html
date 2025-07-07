@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Geração do seu certificado de doação ao KKL</h1>
+        
+        <div class="controls">
+            <div class="input-group">
+                <label for="certificateText">Personalize o Certificado (max 80 caracteres):</label>
+                <input type="text" id="certificateText" maxlength="80" placeholder="Homenagem a .....">
+                <span class="char-counter">0/80</span>
+            </div>
+            
+            <div class="input-group">
+                <label for="imageUpload">Faça upload de sua imagem:</label>
+                <input type="file" id="imageUpload" accept="image/*">
+            </div>
+            
+            <div class="crop-controls" id="cropControls">
+                <h3>Instruções de Uso</h3>
+                <p><strong>1.</strong> Faça upload de sua imagem</p>
+                <p><strong>2.</strong> Clique em "Recorte" para ajustar a imagem</p>
+                <p><strong>3.</strong> Clique no centro da imagem e arraste para criar um corte circular</p>
+                <p><strong>4.</strong> Confirme o corte e posicione a imagem no certificado</p>
+                <p><strong>5.</strong> Clique em "Download do Certificado" para baixar</p>
+
+                <div class="crop-buttons" id="cropButtons" style="display: none;">
+                    <button id="confirmCropBtn">Confirme o  Corte</button>
+                    <button id="cancelCropBtn">Cancele</button>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="cropBtn" disabled>Recorte</button>
+                <button id="downloadBtn" disabled>Download do Certificado</button>
+            </div>
+        </div>
+        
+        <div class="certificate-preview">
+            <canvas id="certificateCanvas" width="800" height="600"></canvas>
+            <div id="dragHandle" class="drag-handle" style="display: none;"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
